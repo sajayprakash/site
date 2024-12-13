@@ -1,0 +1,33 @@
+---
+import { cn } from "../lib/utils";
+import ThemeToggle from "./ThemeToggle.astro";
+
+const pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, "");
+const subpath = pathname.match(/[^\/]+/g);
+const isActive = (href: string) =>
+  href === pathname || href === "/" + (subpath?.[0] || "");
+
+const links = [
+  { url: "/", name: "home" },
+  { url: "/posts", name: "posts" },
+];
+---
+
+<header class="mb-6 flex items-center justify-between" transition:name="header">
+  <nav class="flex items-center gap-4">
+    {
+      links.map((link) => (
+        <a
+          href={link.url}
+          class={cn(
+            "font-medium text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100",
+            isActive(link.url) && "text-zinc-900 dark:text-zinc-100"
+          )}
+        >
+          {link.name}
+        </a>
+      ))
+    }
+  </nav>
+  <ThemeToggle />
+</header>
