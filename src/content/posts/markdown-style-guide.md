@@ -22,10 +22,6 @@ Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sap
 
 ![blog placeholder](/static/blog-placeholder.png)
 
-<video controls>
-  <source src="/static/dynamic-island-animation.mp4" type="video/mp4">
-</video>
-
 > Tiam, ad mint andaepu dandae nostion secatur sequo quae.  
 > **Note** that you can use _Markdown syntax_ within a blockquote.
 
